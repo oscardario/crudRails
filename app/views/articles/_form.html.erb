@@ -1,0 +1,18 @@
+<%= form_for(@article) do |f| %>
+<% @article.errors.full_messages.each do |message| %>
+<p>
+  * <%= message%>
+</p>
+<%end%>
+<div class="form-group">
+  <%= f.text_field :title, placeholder:"Titulo", #directamente se le asigna el value al campo de la tabla
+  class:"form-control" %>
+</div>
+<div class="form-group">
+  <%= f.text_area :body, placeholder: "Escribe aqui el articulo",
+  class:"form-control" %>
+</div>
+<div class="form-group">
+  <%= f.submit("Enviar", class: "btn btn-success")%>
+</div>
+<%end%>

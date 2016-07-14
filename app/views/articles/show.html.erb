@@ -1,0 +1,15 @@
+<h1 class="text-center">Pagina de Show</h1>
+<div class="container">
+  <h2>Escrito por: <%= @article.user.email %></h2>
+  <h4><%= @article.title %> con <%= @article.visits_count%> visitas</h4>
+    <%= @article.body %>
+  <h2>Comentarios</h2>
+  <%= render 'comments/form' %>
+  <ul id="comments-box">
+    <% @article.comments.each do |comment| %>
+      <li><%= comment.body %> - <%= comment.user.email %> <%= comment.id %> </li>
+
+      <%= link_to "Eliminar", [comment.article, comment], method: :delete, data: {confirm: 'Estas seguro?'} %>
+    <%end%>
+  </ul>
+</div>

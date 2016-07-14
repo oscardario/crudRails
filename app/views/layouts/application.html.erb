@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PaginaRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <header>
+    <!-- incluyo el menu -->
+    <%= render 'partials/navigation' %>
+
+  </header>
+<p class="notice"><%= notice %></p> <!-- para las sessiones -->
+<p class="alert"><%= alert %></p> <!-- para las sessiones -->
+<%= yield %>
+
+</body>
+</html>

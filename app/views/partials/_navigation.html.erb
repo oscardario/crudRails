@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+    <li><%= link_to "Inicio", root_path %> </li>
+    <li><%= link_to "Articulos", articles_path %></li>
+    <li><%= link_to "Nuevo Articulo", controller: articles_path, action: "new" %></li>
+    <% if user_signed_in? %>
+    <li><%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></li>
+    <%else%>
+    <li><%= link_to "Iniciar Sesion", new_user_session_path %></li>
+    <li><%= link_to "Registrarse", new_user_registration_path %></li>
+    <%end%>
+    </ul>
+  </div>
+</nav>

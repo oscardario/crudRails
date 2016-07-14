@@ -1,0 +1,8 @@
+I"Ó(function() {
+  $(document).on("ajax:success", "form#comments-form", function(ev, data) {
+    console.log(data);
+    return $("#comments-box").append("<li>" + data.body + " - " + "</li>");
+  });
+
+}).call(this);
+:ET
